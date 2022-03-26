@@ -2,29 +2,29 @@ package week2.assignment1;
 
 import java.util.Scanner;
 
-//kullanicidan veri al odevi
+/**
+ * Manav dükkanı açmak isteyen bir adam hal'den bir miktar elma, bir miktar armut, bir miktar kiraz alacaktır.
+ * Mallar dükkana gelmiştir.
+ * Kullanıcı bu malları ayrı odalarda saklayacaktır.
+ * Her bir odadaki elma, armut ve kirazın kg cinsinden değerini bulalım.
+ *
+ *
+ */
 
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Please enter the amounts of apple, pear, and cherry in the stock");
-        double appleStock = scan.nextDouble();
-        double pearStock = scan.nextDouble();
-        double cherryStock = scan.nextDouble();
 
-        Stock stock = new Stock(appleStock, pearStock, cherryStock);
+        Fruit apple = new Apple(75.75, 3.8);
+        Fruit pear = new Pear(45, 5.2);
+        Fruit cherry = new Cherry(24.6, 9.95);
 
-        System.out.println("Apple amount: " + stock.getAppleAmount());
-        System.out.println("Pear amount: " + stock.getPearAmount());
-        System.out.println("Cherry amount: " + stock.getCherryAmount());
+        Grocery grocery = new Grocery();
+        grocery.addMultipleFruits(apple, pear, cherry);
 
-        stock.sellApple(1);
-        stock.sellPear(2);
-        stock.sellCherry(7.8);
+        UserInterface ui = new UserInterface(scan, grocery);
+        ui.start();
 
-        System.out.println("Apple amount: " + stock.getAppleAmount());
-        System.out.println("Pear amount: " + stock.getPearAmount());
-        System.out.println("Cherry amount: " + stock.getCherryAmount());
-
+        scan.close();
     }
 }
