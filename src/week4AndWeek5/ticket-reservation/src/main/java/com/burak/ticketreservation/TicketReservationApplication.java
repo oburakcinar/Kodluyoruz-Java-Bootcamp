@@ -1,4 +1,5 @@
 package com.burak.ticketreservation;
+//package week4AndWeek5.ticket-reservation.src.main.java.com.burak.ticketreservation;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
